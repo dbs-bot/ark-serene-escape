@@ -29,16 +29,19 @@ const Home = () => {
   const testimonials = [
     {
       name: "Emma Johnson",
+      emoji: "😊",
       rating: 5,
       text: "The most relaxing experience I've ever had. The staff is incredibly professional and the atmosphere is pure bliss."
     },
     {
       name: "Michael Chen",
+      emoji: "😌",
       rating: 5,
       text: "Amazing massage therapy! I left feeling completely renewed and stress-free. Highly recommend The Ark Spa."
     },
     {
       name: "Sarah Williams",
+      emoji: "🥰",
       rating: 5,
       text: "The facial treatment was exceptional. My skin has never looked better. This place is truly a sanctuary."
     }
@@ -153,7 +156,10 @@ const Home = () => {
                     ))}
                   </div>
                   <p className="text-muted-foreground mb-4 italic">"{testimonial.text}"</p>
-                  <p className="font-semibold text-foreground">— {testimonial.name}</p>
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">{testimonial.emoji}</span>
+                    <p className="font-semibold text-foreground">— {testimonial.name}</p>
+                  </div>
                 </CardContent>
               </Card>
             ))}

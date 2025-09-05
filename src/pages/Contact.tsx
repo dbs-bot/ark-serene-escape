@@ -7,23 +7,29 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Phone, Mail, MapPin, Clock, Instagram, Facebook, Twitter } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import contactPhone from "@/assets/contact-phone.jpg";
+import contactEmail from "@/assets/contact-email.jpg";
+import contactLocation from "@/assets/contact-location.jpg";
 
 const Contact = () => {
   const contactInfo = [
     {
       icon: Phone,
+      image: contactPhone,
       title: "Phone",
       details: ["+1 (555) 123-4567", "Available 9 AM - 8 PM"],
       action: "Call Now"
     },
     {
       icon: Mail,
+      image: contactEmail,
       title: "Email",
       details: ["info@thearkspa.com", "We respond within 24 hours"],
       action: "Send Email"
     },
     {
       icon: MapPin,
+      image: contactLocation,
       title: "Location",
       details: ["123 Wellness Avenue", "Serenity City, SC 12345"],
       action: "Get Directions"
@@ -60,8 +66,16 @@ const Contact = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {contactInfo.map((info, index) => (
-              <Card key={index} className="text-center group hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-8">
+              <Card key={index} className="text-center group hover:shadow-lg transition-all duration-300 overflow-hidden bg-gradient-to-b from-primary/5 to-sage/5">
+                <div className="relative h-32 overflow-hidden">
+                  <img 
+                    src={info.image} 
+                    alt={info.title}
+                    className="w-full h-full object-cover opacity-80"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/80" />
+                </div>
+                <CardContent className="p-8 relative">
                   <div className="mb-6 mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                     <info.icon className="h-8 w-8 text-primary" />
                   </div>
