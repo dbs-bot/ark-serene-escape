@@ -8,25 +8,21 @@ const About = () => {
   const values = [
     {
       icon: Heart,
-      emoji: "💆‍♀️",
       title: "Holistic Wellness",
       description: "We believe in treating the whole person - body, mind, and spirit - for complete rejuvenation."
     },
     {
       icon: Sparkles,
-      emoji: "✨",
       title: "Luxury Experience",
       description: "Every detail is crafted to provide you with an unparalleled spa experience that exceeds expectations."
     },
     {
       icon: Users,
-      emoji: "🧘‍♀️",
       title: "Expert Therapists",
       description: "Our certified professionals bring years of experience and passion to every treatment."
     },
     {
       icon: Award,
-      emoji: "🌿",
       title: "Premium Quality",
       description: "We use only the finest organic products and state-of-the-art equipment for optimal results."
     }
@@ -93,7 +89,7 @@ const About = () => {
               <Card key={index} className="text-center group hover:shadow-lg transition-all duration-300">
                 <CardContent className="p-8">
                   <div className="mb-6 mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <span className="text-2xl">{value.emoji}</span>
+                    <value.icon className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold mb-4">{value.title}</h3>
                   <p className="text-muted-foreground">{value.description}</p>

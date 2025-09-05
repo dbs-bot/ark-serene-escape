@@ -4,17 +4,12 @@ import { Badge } from "@/components/ui/badge";
 import { Clock, Star, Sparkles, Heart, Flower2, Droplet, Sun, Leaf } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import serviceFacial from "@/assets/service-facial.jpg";
-import serviceMassage from "@/assets/service-massage.jpg";
-import serviceBody from "@/assets/service-body.jpg";
-import serviceWellness from "@/assets/service-wellness.jpg";
 
 const Services = () => {
   const serviceCategories = [
     {
       title: "Facial Treatments",
       icon: Sparkles,
-      image: serviceFacial,
       services: [
         {
           name: "Signature Glow Facial",
@@ -40,7 +35,6 @@ const Services = () => {
     {
       title: "Massage Therapy",
       icon: Heart,
-      image: serviceMassage,
       services: [
         {
           name: "Swedish Relaxation Massage",
@@ -72,7 +66,6 @@ const Services = () => {
     {
       title: "Body Treatments",
       icon: Leaf,
-      image: serviceBody,
       services: [
         {
           name: "Detoxifying Body Wrap",
@@ -98,7 +91,6 @@ const Services = () => {
     {
       title: "Wellness Rituals",
       icon: Sun,
-      image: serviceWellness,
       services: [
         {
           name: "Meditation & Sound Healing",
@@ -181,14 +173,7 @@ const Services = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {category.services.map((service, serviceIndex) => (
-                <Card key={serviceIndex} className={`group hover:shadow-lg transition-all duration-300 overflow-hidden ${service.featured ? 'ring-2 ring-primary/20' : ''}`}>
-                  <div className="relative h-48 overflow-hidden">
-                    <img 
-                      src={category.image} 
-                      alt={service.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
+                <Card key={serviceIndex} className={`group hover:shadow-lg transition-all duration-300 ${service.featured ? 'ring-2 ring-primary/20' : ''}`}>
                   <CardHeader>
                     <div className="flex items-start justify-between">
                       <div>
